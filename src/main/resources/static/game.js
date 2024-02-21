@@ -88,7 +88,7 @@ function showGameStatus(gameStatus) {
     	if(isCurrentPlayer(gameStatus.lastPlayer) && gameStatus.gameMode != 'AI') {
     		$("#gameStatus").append(
     				"<div class='alert alert-info'>"
-    				+"<p>Waiting for an other player</p>"
+    				+"<p>Waiting for other player</p>"
     				+"</div>"
     		);
     	}
@@ -96,7 +96,7 @@ function showGameStatus(gameStatus) {
     	if(gameStatus.lastNumberAdded != null) {
     		$("#gameStatus").append(
     				"<div class='alert " + classToUse(gameStatus.lastPlayer) + "'>" 
-    				+ "<b>" + gameStatus.lastPlayer + "</b>" + " played <b>" + gameStatus.lastNumberAdded + "</b>"
+    				+ "<b>" + gameStatus.lastPlayer + "</b>" + " Added <b>" + gameStatus.lastNumberAdded + "</b>"
     				+"<br>"
     				+"<b>"
     				+ gameStatus.currentNumber
@@ -120,14 +120,14 @@ function showGameStatus(gameStatus) {
 	        if(isCurrentPlayer(gameStatus.lastPlayer)) {
 	        	$("#gameStatus").append(
 	        			"<div class='alert alert-success'>"
-	        			+"Congratulations ! You won !"
+	        			+" You won !"
 	        			+"<br>Refresh the browser to start a new game"
 	        			+"</div>"
 	        	);
 	        } else {
 	        	$("#gameStatus").append(
 	        			"<div class='alert alert-danger'>"
-	        			+"You lost ! Hard luck !"
+	        			+"You lost !"
 	        			+"<br>Refresh the browser to start a new game"
 	        			+"</div>"
 	        	);

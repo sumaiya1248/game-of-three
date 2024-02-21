@@ -22,11 +22,11 @@ import java.util.Random;
 @Component
 public class GameManagerImpl implements GameManager {
 
-	private PlayerManager playerManager;
+	private final PlayerManager playerManager;
 
-	private GameRules gameRules;
+	private final GameRules gameRules;
 
-	private PlayerNumberPolicy playerNumberPolicy;
+	private final PlayerNumberPolicy playerNumberPolicy;
 
 	@Value("${gameofthree.player.game.max-number}")
 	private int maxNumber;
@@ -51,9 +51,11 @@ public class GameManagerImpl implements GameManager {
 	}
 	@Override
 	public GameState addNewPlayer(String playerName, GameModeEnum gameMode) {
-		playerManager.add(new Player().builder().name(playerName).build());
+		Player player = new Player();
+		player.setName(playerName);
+		playerManager.add(player);
 		if (playerNumberPolicy.isRequiredPlayerNumberAchieved()) {
-			return new GameState(getARandomNumber(), playerName, GameStateEnum.IN_PROGRESS, gameMode);
+			return new GameState(generateRandomNumber(), playerName, GameStateEnum.IN_PROGRESS, gameMode);
 		}
 		return new GameState(playerName, GameStateEnum.WAITING_FOR_PLAYER, gameMode);
 	}
@@ -69,7 +71,7 @@ public class GameManagerImpl implements GameManager {
 		return (gameRound.getCurrentNumber() + gameRound.getInputNumber()) / 3;
 	}
 
-	private int getARandomNumber() {
+	private int generateRandomNumber() {
 		return new Random().ints(minNumber, maxNumber).findFirst().getAsInt();
 	}
 
