@@ -14,7 +14,9 @@ Tech stack Used
  download the project and run it.
  open 2 browers and enter the player name and choose to play either with other player or Machine.
  in second brower enter the Name and start playing.
- 
+
+
+ Please note : I have not added tests yet as do not ffind much time.
 
  
  
