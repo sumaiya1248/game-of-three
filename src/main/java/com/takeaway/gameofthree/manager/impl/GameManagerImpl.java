@@ -28,10 +28,10 @@ public class GameManagerImpl implements GameManager {
 
 	private final PlayerNumberPolicy playerNumberPolicy;
 
-	@Value("${gameofthree.player.game.max-number}")
+	@Value("${gameofthree.game.max-number}")
 	private int maxNumber;
 
-	@Value("${gameofthree.player.game.min-number}")
+	@Value("${gameofthree.game.min-number}")
 	private int minNumber;
 
 	public GameManagerImpl(PlayerManager playerManager, GameRules gameRules, PlayerNumberPolicy playerNumberPolicy) {
@@ -44,7 +44,7 @@ public class GameManagerImpl implements GameManager {
 		int newCurrentNumber = countCurrentNumber(gameRound);
 		GameStateEnum state = getGameState(newCurrentNumber);
 		if (state == GameStateEnum.OVER) {
-			playerManager.reinitPlayers();
+			playerManager.clearPlayers();
 		}
 		return new GameState(newCurrentNumber, gameRound.getPlayer(), gameRound.getInputNumber(), state,
 				gameRound.getGameMode());

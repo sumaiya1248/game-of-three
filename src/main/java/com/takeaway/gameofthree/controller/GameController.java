@@ -4,11 +4,8 @@ import com.takeaway.gameofthree.dto.GameParticipateRequest;
 import com.takeaway.gameofthree.dto.GamePlayRoundRequest;
 import com.takeaway.gameofthree.manager.GameManager;
 import com.takeaway.gameofthree.manager.PlayerManager;
-import com.takeaway.gameofthree.manager.impl.GameManagerImpl;
-import com.takeaway.gameofthree.manager.impl.PlayerManagerImpl;
 import com.takeaway.gameofthree.util.GameState;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -33,7 +30,7 @@ public class GameController {
 		this.playerManager = playerManager;
 	}
 
-	@Value("${gameofthree.player.game.ai-name}")
+	@Value("${gameofthree.game.ai-name}")
 	private String aiPlayerName;
 	@MessageMapping("/participate")
 	@SendTo("/topic/gameOfThree")

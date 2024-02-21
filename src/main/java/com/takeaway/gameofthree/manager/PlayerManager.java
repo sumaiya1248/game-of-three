@@ -8,7 +8,7 @@ public interface PlayerManager {
 
 	void add(Player player);
 
-	void reinitPlayers();
+	void clearPlayers();
 
 	boolean isPlayerWaiting();
 }

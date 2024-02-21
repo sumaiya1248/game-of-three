@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GameRules {
 
-	@Value("${gameofthree.player.game.over-game-at}")
+	@Value("${gameofthree.game.over-game-at}")
 	private int gameOverAtNumber;
 
 	private final  PlayerNumberPolicy playerNumberPolicy;

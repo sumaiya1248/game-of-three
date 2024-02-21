@@ -20,7 +20,7 @@ public class PlayerNumberPolicy {
 
 	private PlayerRepository playerRepository;
 
-	@Value("${gameofthree.player.max-players}")
+	@Value("${gameofthree.game.player.max-players}")
 	private int requiredPlayerNumberToStart;
 
 	public PlayerNumberPolicy(PlayerRepository playerRepository) {

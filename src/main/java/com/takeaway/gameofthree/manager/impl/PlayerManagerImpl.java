@@ -28,7 +28,7 @@ public class PlayerManagerImpl implements PlayerManager {
 		playerRepository.save(player);
 	}
 
-	public void reinitPlayers() {
+	public void clearPlayers() {
 		playerRepository.deleteAll();
 	}
 

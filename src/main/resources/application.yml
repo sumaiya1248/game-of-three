@@ -1,12 +1,13 @@
 gameofthree:
-  player:
-    max-players: 2
-    game:
-      over-game-at: 1
-      min-number: 20
-      max-number: 100
-      ai-name: Ai
-
+  game:
+    over-game-at: 1
+    min-number: 4
+    max-number: 100
+    ai-name: Ai
+    player:
+      max-players: 2
+  wsconfig:
+    endpoint: /game-of-three-websocket
 # Spring h2 datasource config
 spring:
   datasource:
@@ -16,6 +17,3 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
