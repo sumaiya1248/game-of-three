@@ -1,0 +1,21 @@
+gameofthree:
+  player:
+    max-players: 2
+    game:
+      over-game-at: 1
+      min-number: 20
+      max-number: 100
+      ai-name: Ai
+
+# Spring h2 datasource config
+spring:
+  datasource:
+    url: jdbc:h2:mem:gameofthree
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true

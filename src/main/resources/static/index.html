@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Of Three</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--     <link href="/main.css" rel="stylesheet"> -->
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/game.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+
+		<div class="row">
+			<div class="text-center">
+				<img src="logo.png" alt="Game Of Three" class="rounded" style="max-width: 40%;" >
+			</div>
+		</div>
+
+		<div class="row" style="margin-bottom: 1%;">
+	        <div class="text-center">
+	            <form class="form-inline">
+	                <div class="form-group">
+	                    <label for="playerName">What is your name?</label>
+	                    <input type="text" id="playerName" class="form-control" placeholder="Your name here...">
+	                	<button id="start" class="btn btn-default" type="submit">Start against Player</button>
+	                	<button id="start-ai" class="btn btn-default" type="submit">Start against AI</button>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	    
+	    <div class="row" style="margin-bottom: 1%;">
+		    <div class="text-center" id="gameMessage">
+	            <form class="form-inline">
+			        <div class="form-group">
+				    	<input id="gameMode" type="hidden"/>
+				    	<input id="lastPlayer" type="hidden"/>
+				    	<input id="currentNumber" type="hidden"/>
+				    	<button id="playMinusOne" type="button" class="btn btn-info">-1</button>
+				    	<button id="playZero" type="button" class="btn btn-info">0</button>
+				    	<button id="playOne" type="button" class="btn btn-info">1</button>
+			    	</div>
+		    	</form>
+		    </div>
+	    </div>
+    
+    <div id="gameStatus" class='text-center'></div>
+        
+    <div id="gameOverMessage"></div>
+</div>
+</body>
+</html>
